@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask App</title>
+	<style>
+		body {
+			background-color: #f8f8f8;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+		}
+
+		h1 {
+			color: #333;
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		form {
+			margin: 50px auto;
+			width: 400px;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		input[type=number] {
+			display: block;
+			margin: 20px auto;
+			padding: 10px;
+			width: 100%;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			font-size: 16px;
+			color: #333;
+		}
+
+		button[type=submit] {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		.output {
+			margin-top: 50px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			color: #333;
+		}
+
+		.output span {
+			display: inline-block;
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #333;
+			color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+<body>
+	<h1>Flask App</h1>
+	<form action="/" method="post">
+		<input type="number" name="number" placeholder="Enter a number" required>
+		<button type="submit">Submit</button>
+	</form>
+	{% if output %}
+		<div class="output">
+			The result is: <span>{{ output }}</span>
+		</div>
+	{% endif %}
+</body>
+</html>
